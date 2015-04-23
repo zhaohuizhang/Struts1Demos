@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+  <container path="com.genuitec.runtime.library/com.genuitec.struts_1.3">
+    <jar-attrs id="data/1.3/lib/struts-core-1.3.8.jar">
+      <attribute name="javadoc_location" value="http://struts.apache.org/release/1.3.x/apidocs/"/>
+      <attribute name="source-path-root"/>
+      <attribute name="source_encoding" value="UTF-8"/>
+      <attribute name="source-path" value="F:\Java\Struts\struts-1.3.8-all-src\struts-1.3.8-src"/>
+    </jar-attrs>
+  </container>
+</project>

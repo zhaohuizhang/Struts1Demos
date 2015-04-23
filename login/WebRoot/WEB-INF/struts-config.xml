@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="loginForm" type="com.sjtu.napu.struts.form.LoginForm" />
+    <form-bean name="registerForm" type="com.sjtu.napu.struts.form.RegisterForm" />
+    <form-bean name="stuinfoForm" type="com.sjtu.napu.struts.form.StuinfoForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="loginForm"
+      input="/login.jsp"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      type="com.sjtu.napu.struts.action.LoginAction"
+      validate="false"
+      cancellable="true">
+      <forward name="error" path="/error.jsp" />
+      <forward name="success" path="/success.jsp" />
+    </action>
+    <action
+      attribute="registerForm"
+      input="/register.jsp"
+      name="registerForm"
+      path="/register"
+      scope="request"
+      type="com.sjtu.napu.struts.action.RegisterAction"
+      validate="false"
+      cancellable="true">
+      <forward name="registersuccess" path="/registersuccess.jsp" />
+    </action>
+    <action
+      attribute="stuinfoForm"
+      input="/save.jsp"
+      name="stuinfoForm"
+      path="/stuinfo"
+      scope="request"
+      type="com.sjtu.napu.struts.action.StuinfoAction"
+      validate="false"
+      cancellable="true">
+      <forward name="success" path="/result.jsp" />
+    </action>
+	<action
+	  path="/save"
+	  name="stuinfoForm" 
+	  scope="request"
+	  type="org.apache.struts.actions.ForwardAction"
+	  parameter="/save.jsp"
+	  validate="false"
+	  input="/registration.jsp" >
+	</action>
+		
+  </action-mappings>
+  <controller processorClass="com.sjtu.napu.struts.action.EncodingHandler"></controller>
+  <message-resources parameter="com.sjtu.napu.struts.ApplicationResources" />
+</struts-config>
+
